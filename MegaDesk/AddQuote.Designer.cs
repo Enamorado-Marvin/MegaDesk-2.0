@@ -35,16 +35,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.nameInput = new System.Windows.Forms.TextBox();
+            this.drawersInput = new System.Windows.Forms.ComboBox();
+            this.materialInput = new System.Windows.Forms.ComboBox();
+            this.rushInput = new System.Windows.Forms.ComboBox();
             this.warningOne = new System.Windows.Forms.Label();
-            this.deskWith = new System.Windows.Forms.NumericUpDown();
-            this.deskDepth = new System.Windows.Forms.NumericUpDown();
+            this.widthInput = new System.Windows.Forms.NumericUpDown();
+            this.depthInput = new System.Windows.Forms.NumericUpDown();
             this.warningTwo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.deskWith)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deskDepth)).BeginInit();
+            this.SubmitOrder = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.widthInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.depthInput)).BeginInit();
             this.SuspendLayout();
             // 
             // close
@@ -125,19 +126,19 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Rush order:";
             // 
-            // textBox1
+            // nameInput
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox1.Location = new System.Drawing.Point(175, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 23);
-            this.textBox1.TabIndex = 1;
+            this.nameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.nameInput.Location = new System.Drawing.Point(175, 37);
+            this.nameInput.Name = "nameInput";
+            this.nameInput.Size = new System.Drawing.Size(250, 23);
+            this.nameInput.TabIndex = 1;
             // 
-            // comboBox1
+            // drawersInput
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.drawersInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.drawersInput.FormattingEnabled = true;
+            this.drawersInput.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
@@ -146,39 +147,39 @@
             "5",
             "6",
             "7"});
-            this.comboBox1.Location = new System.Drawing.Point(175, 156);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 24);
-            this.comboBox1.TabIndex = 4;
+            this.drawersInput.Location = new System.Drawing.Point(175, 156);
+            this.drawersInput.Name = "drawersInput";
+            this.drawersInput.Size = new System.Drawing.Size(125, 24);
+            this.drawersInput.TabIndex = 4;
             // 
-            // comboBox2
+            // materialInput
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.materialInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.materialInput.FormattingEnabled = true;
+            this.materialInput.Items.AddRange(new object[] {
             "Laminate",
             "Oak",
             "Rosewood",
             "Veneer",
             "Pine"});
-            this.comboBox2.Location = new System.Drawing.Point(175, 196);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(125, 24);
-            this.comboBox2.TabIndex = 5;
+            this.materialInput.Location = new System.Drawing.Point(175, 196);
+            this.materialInput.Name = "materialInput";
+            this.materialInput.Size = new System.Drawing.Size(125, 24);
+            this.materialInput.TabIndex = 5;
             // 
-            // comboBox3
+            // rushInput
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.rushInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rushInput.FormattingEnabled = true;
+            this.rushInput.Items.AddRange(new object[] {
             "3 days",
             "5 days",
             "7 days",
             "Normal (14 days)"});
-            this.comboBox3.Location = new System.Drawing.Point(175, 236);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(125, 24);
-            this.comboBox3.TabIndex = 6;
+            this.rushInput.Location = new System.Drawing.Point(175, 236);
+            this.rushInput.Name = "rushInput";
+            this.rushInput.Size = new System.Drawing.Size(125, 24);
+            this.rushInput.TabIndex = 6;
             // 
             // warningOne
             // 
@@ -189,23 +190,23 @@
             this.warningOne.Size = new System.Drawing.Size(0, 13);
             this.warningOne.TabIndex = 8;
             // 
-            // deskWith
+            // widthInput
             // 
-            this.deskWith.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.deskWith.Location = new System.Drawing.Point(176, 79);
-            this.deskWith.Name = "deskWith";
-            this.deskWith.Size = new System.Drawing.Size(124, 23);
-            this.deskWith.TabIndex = 2;
-            this.deskWith.ValueChanged += new System.EventHandler(this.DeskWith_ValueChanged);
+            this.widthInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.widthInput.Location = new System.Drawing.Point(176, 79);
+            this.widthInput.Name = "widthInput";
+            this.widthInput.Size = new System.Drawing.Size(124, 23);
+            this.widthInput.TabIndex = 2;
+            this.widthInput.ValueChanged += new System.EventHandler(this.DeskWith_ValueChanged);
             // 
-            // deskDepth
+            // depthInput
             // 
-            this.deskDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.deskDepth.Location = new System.Drawing.Point(176, 117);
-            this.deskDepth.Name = "deskDepth";
-            this.deskDepth.Size = new System.Drawing.Size(124, 23);
-            this.deskDepth.TabIndex = 3;
-            this.deskDepth.ValueChanged += new System.EventHandler(this.DeskDepth_ValueChanged);
+            this.depthInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.depthInput.Location = new System.Drawing.Point(176, 117);
+            this.depthInput.Name = "depthInput";
+            this.depthInput.Size = new System.Drawing.Size(124, 23);
+            this.depthInput.TabIndex = 3;
+            this.depthInput.ValueChanged += new System.EventHandler(this.DeskDepth_ValueChanged);
             // 
             // warningTwo
             // 
@@ -216,20 +217,33 @@
             this.warningTwo.Size = new System.Drawing.Size(0, 13);
             this.warningTwo.TabIndex = 8;
             // 
+            // SubmitOrder
+            // 
+            this.SubmitOrder.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.SubmitOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.SubmitOrder.Location = new System.Drawing.Point(321, 323);
+            this.SubmitOrder.Name = "SubmitOrder";
+            this.SubmitOrder.Size = new System.Drawing.Size(104, 46);
+            this.SubmitOrder.TabIndex = 9;
+            this.SubmitOrder.Text = "Submit";
+            this.SubmitOrder.UseVisualStyleBackColor = true;
+            this.SubmitOrder.Click += new System.EventHandler(this.SubmitOrder_Click);
+            // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.close;
             this.ClientSize = new System.Drawing.Size(509, 383);
-            this.Controls.Add(this.deskDepth);
-            this.Controls.Add(this.deskWith);
+            this.Controls.Add(this.SubmitOrder);
+            this.Controls.Add(this.depthInput);
+            this.Controls.Add(this.widthInput);
             this.Controls.Add(this.warningTwo);
             this.Controls.Add(this.warningOne);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.rushInput);
+            this.Controls.Add(this.materialInput);
+            this.Controls.Add(this.drawersInput);
+            this.Controls.Add(this.nameInput);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -242,8 +256,8 @@
             this.Name = "AddQuote";
             this.Padding = new System.Windows.Forms.Padding(40);
             this.Text = "Add Quote";
-            ((System.ComponentModel.ISupportInitialize)(this.deskWith)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deskDepth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widthInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.depthInput)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,13 +272,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox nameInput;
+        private System.Windows.Forms.ComboBox drawersInput;
+        private System.Windows.Forms.ComboBox materialInput;
+        private System.Windows.Forms.ComboBox rushInput;
         private System.Windows.Forms.Label warningOne;
-        private System.Windows.Forms.NumericUpDown deskWith;
-        private System.Windows.Forms.NumericUpDown deskDepth;
+        private System.Windows.Forms.NumericUpDown widthInput;
+        private System.Windows.Forms.NumericUpDown depthInput;
         private System.Windows.Forms.Label warningTwo;
+        private System.Windows.Forms.Button SubmitOrder;
     }
 }
