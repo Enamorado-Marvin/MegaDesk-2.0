@@ -30,9 +30,11 @@ namespace MegaDesk
             reader.Close();
         }
 
+        // I couldn't figure out back to main so I sent it back to add quote 
+        // I guess a user cou
         private void close_Click(object sender, EventArgs e)
         {
-            MainMenu viewMainMenu = (MainMenu)Tag;
+            AddQuote viewMainMenu = (AddQuote)Tag;
             viewMainMenu.Show();
             Close();
         }

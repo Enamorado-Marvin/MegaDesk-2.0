@@ -12,7 +12,12 @@ using System.IO;
 namespace MegaDesk
 {
     public partial class AddQuote : Form
-    {      
+    {
+        private Desk desk = new Desk();
+        private DeskQuote newQuote = new DeskQuote();
+        double materialOrder = 0;
+
+
         public AddQuote()
         {
             InitializeComponent();
@@ -40,6 +45,8 @@ namespace MegaDesk
             {
                 warningOne.Text = "";
             }
+
+            desk.Width = uint.Parse(widthInput.Value.ToString());
         }
 
         private void DeskDepth_ValueChanged(object sender, EventArgs e)
@@ -56,14 +63,13 @@ namespace MegaDesk
             {
                 warningTwo.Text = "";
             }
+
+            desk.Depth = uint.Parse(depthInput.Value.ToString());
         }
 
         private void SubmitOrder_Click(object sender, EventArgs e)
         {
-            Desk desk = new Desk();
-            DeskQuote newQuote = new DeskQuote();
-            int material = 0;
-
+            
             // all entered validation
             try
             {
@@ -76,13 +82,14 @@ namespace MegaDesk
                 NumericUpDown widthBox = sender as NumericUpDown;
                 if (widthInput != null)
                 {
+                  
                     desk.Width = Convert.ToDouble(widthInput.Value);
                 }
 
                 NumericUpDown depthBox = sender as NumericUpDown;
                 if (depthInput != null)
                 {
-                    desk.Depth = desk.Width = Convert.ToDouble(widthInput.Value);
+                    desk.Depth = desk.Depth = Convert.ToDouble(depthInput.Value);
                 }
                 
 
@@ -94,28 +101,36 @@ namespace MegaDesk
 
                 if (materialInput != null)
                 {
-                    string selectedMaterial = materialInput.SelectedItem.ToString();
+                    desk.material = materialInput.SelectedItem.ToString();
 
-                    switch (selectedMaterial)
+                    switch (desk.material)
                     {
                         case "Oak":
-                            material = (int)DesktopMaterial.Oak;
+                            //material = DesktopMaterial.Oak;
+                            materialOrder = 200;
                             break;
                         case "Rosewood":
-                            material = (int)DesktopMaterial.Rosewood;
+                            //material = DesktopMaterial.Rosewood;
+                            materialOrder = 300;
                             break;
                         case "Laminate":
-                            material = (int)DesktopMaterial.Laminate;
+                            //material = DesktopMaterial.Laminate;
+                            materialOrder = 100;
                             break;
                         case "Veneer":
-                            material = (int)DesktopMaterial.Veneer;
+                            //material = DesktopMaterial.Veneer;
+                            materialOrder = 125;
                             break;
                         case "Pine":
-                            material = (int)DesktopMaterial.Pine;
+                            //material = DesktopMaterial.Pine;
+                            materialOrder = 50;
                             break;
+
+                            
                     }
+
                 }
-               
+
 
                 if (rushInput != null)
                 {
@@ -125,15 +140,20 @@ namespace MegaDesk
             }
             catch
             {
-                MessageBox.Show("Please enter a value in every field", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (nameInput == null || widthInput == null || depthInput == null || materialInput == null || rushInput == null)
+                {
+                    MessageBox.Show("Please enter a value in every field", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
             }
 
+           
             double surfaceArea = newQuote.calcSurfaceArea(desk.Width, desk.Depth);
             double shipping = newQuote.calcShippingCost(surfaceArea, newQuote.RushOrder);
             DateTime quoteDate = DateTime.Today;
             newQuote.QuoteDate = quoteDate;
 
-            double quoteTotal = newQuote.QuoteTotal(material, shipping, surfaceArea, desk.DrawersNum);
+            double quoteTotal = newQuote.QuoteTotal(materialOrder, shipping, surfaceArea, desk.DrawersNum);
 
             StreamWriter writeQuote = new StreamWriter("newQuote.txt");
             writeQuote.WriteLine(newQuote.CustName);
@@ -145,6 +165,11 @@ namespace MegaDesk
             displayQuote.Tag = this;
             displayQuote.Show(this);
             Hide();
+        }
+
+        private void AddQuote_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

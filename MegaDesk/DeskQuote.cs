@@ -20,12 +20,13 @@ namespace MegaDesk
         public DateTime QuoteDate { get; set; }
 
         //Total, adds the different prices together
-        public double QuoteTotal(int material, double shippingCost, double surfaceArea, uint drawers)
+        public double QuoteTotal(double materialOrder , double shippingCost, double surfaceArea, uint drawers)
         {
             int basePrice = 200;
             drawers *= 50;
+            
 
-            quoteTotal = basePrice + shippingCost + surfaceArea + drawers;
+            quoteTotal = basePrice + shippingCost + surfaceArea + drawers + materialOrder;
 
             return quoteTotal;
         }
@@ -90,3 +91,5 @@ namespace MegaDesk
         }
     }
 }
+
+

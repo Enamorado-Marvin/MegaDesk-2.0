@@ -17,6 +17,8 @@ namespace MegaDesk
 
     class Desk
     {
+        internal string material;
+
         //members
         private double width;
         private double depth;
